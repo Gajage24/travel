@@ -1,0 +1,30 @@
+.packages {
+padding: 40px;
+}
+.package-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 20px;
+}
+ h2{
+  font-size: 40px;
+  margin: 5px 0;
+  font-weight: bold;
+  color: rgb(81, 44, 116);
+}
+.home-page {
+  min-height: 100vh;
+  padding-bottom: 50px;
+}
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero img,
+  .hero-text {
+    width: 100%;
+  }
+}
+

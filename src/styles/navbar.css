@@ -1,0 +1,45 @@
+.navbar {
+background: white;
+padding: 15px;
+box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+ position: relative;   
+  z-index: 1000;
+}
+.nav-container {
+max-width: 1200px;
+margin: auto;
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap; 
+}
+.menu a {
+margin-left: 20px;
+color: #333;
+}
+ .logo{
+    font-weight:600;
+    font-size: 30px; 
+}
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    background: white;
+    flex-direction: column;
+    text-align: center;
+    display: none;
+    padding: 15px 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+}
