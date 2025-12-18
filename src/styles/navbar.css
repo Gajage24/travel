@@ -29,7 +29,6 @@
 
 .menu a {
   margin-left: 20px;
-  color: #333;
   text-decoration: none;
   font-weight: 500;
 }
@@ -39,6 +38,12 @@
   display: none;
   font-size: 26px;
   cursor: pointer;
+}
+
+
+.menu {
+  color: #5a2d82;
+
 }
 @media (max-width: 768px) {
 
@@ -66,4 +71,6 @@
     margin: 15px 0;
     font-size: 18px;
   }
+  
 }
+
