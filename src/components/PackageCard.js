@@ -9,7 +9,7 @@ return (
 <p>{data.summary}</p>
 <div className="bottom">
 <span>{data.price}</span>
-<a href="/booking">Book</a>
+
 </div>
 </div>
 )

@@ -60,7 +60,7 @@ function Home() {
 
       <section className="packages">
         <h2>Popular Packages</h2>
-        <div className="package-grid">
+        <div className="packages-grid">
           {packages.map((p, i) => <PackageCard key={i} data={p} />)}
         </div>
       </section>
