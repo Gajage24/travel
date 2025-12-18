@@ -51,6 +51,10 @@
   .booking-form {
     padding: 15px;
   }
+
+  .booking-card{
+  width:auto;
+}
 }
 
 .booking-card select {
@@ -64,4 +68,5 @@
   background-color: #fff;
   cursor: pointer;
 }
+
 

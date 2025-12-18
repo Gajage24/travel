@@ -52,7 +52,7 @@ const Booking = () => {
         <form onSubmit={handleBooking}>
           <input name="name" placeholder="Enter your name" required />
 
-          <input value={selectedPlace?.name || "place"}  />
+          <input value={selectedPlace?.name } placeholder="place"/>
 
           <input name="date" type="date" required />
 
