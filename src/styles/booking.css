@@ -47,13 +47,20 @@
 .booking-card button:hover {
   background: #0f6adf;
 }
-@media (max-width: 600px) {
+@media (max-width: 992px) {
   .booking-form {
+     max-width: 520px; 
     padding: 15px;
+  }
+
+   .booking-page {
+    min-height: 100vh;
   }
 
   .booking-card{
   width:auto;
+   max-width: 520px; 
+    padding: 40px;
 }
 }
 

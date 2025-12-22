@@ -9,32 +9,46 @@ import image3 from '../assets/friends (1).png';
 import { useNavigate } from "react-router-dom";
 
 
+
 const packages = [
-  {img:image1, title: "Solo Trip", summary: "Best for solo travellers", price: "₹29,999" },
-  {img:image2, title: "Family Trip", summary: "Perfect for families", price: "₹49,999" },
-  {img:image3, title: "Friends Trip", summary: "Fun group adventure", price: "₹34,999" }
+  {img:image1, title: "Solo Trip",
+  summary: "Best for solo travellers" 
+},
+
+  {img:image2, title: "Family Trip",
+  summary: "Perfect for families" 
+},
+
+  {img:image3, title: "Friends Trip", 
+  summary: "Fun group adventure"
+}
 ];
+ 
 
 function Home() {
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
 
   const handleSearch = () => {
-    const result = placesData.find(
-      (place) => place.name.toLowerCase() === search.toLowerCase()
-      
-
+    if (!search.trim()) {
+      alert("Please enter a place name");
+        return;
+    }
+    const result = placesData.find((place) =>
+      place.name.toLowerCase().includes(search.toLowerCase())
     );
-
     if (result) {
-      
-      navigate("/booking", { state: { place: result } });
+      navigate("/booking", {
+        state: { place: result }
+      });
     } else {
       alert("Place not found");
-    
-
     }
   };
+  const handlePackageClick = (type) => {
+  navigate("/services");
+};
+
 
 
   return (
@@ -61,7 +75,9 @@ function Home() {
       <section className="packages">
         <h2>Popular Packages</h2>
         <div className="packages-grid">
-          {packages.map((p, i) => <PackageCard key={i} data={p} />)}
+          {packages.map((p, i) => <PackageCard key={i} data={p}
+           onClick={() => handlePackageClick(p.title.toLowerCase().split(" ")[0])}
+          />)}
         </div>
       </section>
     </div>

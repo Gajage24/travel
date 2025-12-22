@@ -1,48 +1,56 @@
+import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { placesData } from "../data/PlaceData";
+import packageInfo from "../data/packageInfo"; 
 
 const PlaceDetails = () => {
-  const { name } = useParams();
+  const { type } = useParams(); 
   const navigate = useNavigate();
 
-  const place = placesData.find(
-    (p) => p.name.toLowerCase() === name.toLowerCase()
-  );
+  const info = packageInfo[type]; 
 
-  if (!place) {
-    return <h2 style={{ padding: "20px" }}>Place not found</h2>;
+  if (!info) {
+    return <h2>Package not found</h2>;
   }
 
   return (
-    <div style={{ padding: "30px" }}>
-      <h2>{place.name} Tour</h2>
-      <p>{place.description}</p>
+    <div style={{ padding: "30px", maxWidth: "900px", margin: "auto" }}>
+      <h1>{info.title}</h1>
+      <p>{info.description}</p>
 
-    
-      <div style={{ display: "flex", gap: "15px", flexWrap: "wrap" }}>
-        {placesData.map((img, index) => (
-          <img
-            key={index}
-            src={img}
-            alt={place.name}
-            width="250"
-            style={{ borderRadius: "10px" }}
-          />
+      <h3>What’s Included</h3>
+      <ul>
+        {info.includes.map((item, i) => (
+          <li key={i}>{item}</li>
         ))}
-      </div>
+      </ul>
 
-      <br />
+      <h3>Benefits</h3>
+      <ul>
+        {info.benefits.map((item, i) => (
+          <li key={i}>{item}</li>
+        ))}
+      </ul>
 
-      <button onClick={() => navigate(`/packages/solo/${place.name}`)}>
-        Solo Trip
-      </button>
+      <h3>Services</h3>
+      <ul>
+        {info.services.map((item, i) => (
+          <li key={i}>{item}</li>
+        ))}
+      </ul>
 
-      <button onClick={() => navigate(`/packages/family/${place.name}`)}>
-        Family Trip
-      </button>
-
-      <button onClick={() => navigate(`/packages/friends/${place.name}`)}>
-        Friends Trip
+      <button
+        onClick={() => navigate("/contact")}
+        style={{
+          marginTop: "20px",
+          padding: "10px 20px",
+          background: "#2f6bed",
+          color: "#fff",
+          border: "none",
+          borderRadius: "8px",
+          cursor: "pointer",
+        }}
+      >
+        Contact Us
       </button>
     </div>
   );

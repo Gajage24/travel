@@ -2,7 +2,6 @@
 padding: 20px;
 
 }
-
 .packages-grid {
   display: flex;
   align-items: center;
@@ -12,8 +11,6 @@ padding: 20px;
   flex-wrap: nowrap;
  
 }
-
-
 .packages h2 {
   text-align: center;
   font-size: 40px;
@@ -24,8 +21,6 @@ padding: 20px;
   min-height: 100vh;
   padding-bottom: 50px;
 }
-
-
   .hero img,
   .hero-text {
     width: 100%;
@@ -38,15 +33,13 @@ padding: 20px;
     flex-direction: column;
     align-items: center;
   }
-
- 
-
   body {
     overflow-x: hidden;
   }
-
- 
-
+}
+.home-page {
+  width: 100%;
+  overflow-x: hidden;
 }
 
 

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import "../styles/navbar.css";
+import logo from "../assets/logoimage.jpg";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -8,7 +9,9 @@ const Navbar = () => {
   return (
     <header className="navbar">
       <div className="nav-container">
-        <Link to="/" className="logo">WorldNest Tours</Link>
+        <Link to="/" className="logo">
+        <img src={logo} alt="WorldNest Logo"/>
+        WorldNest Tours</Link>
 
      
         <div className="menu-btn" onClick={() => setOpen(!open)}>

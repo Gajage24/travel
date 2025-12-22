@@ -4,31 +4,43 @@ const Packages = () => {
   const { type, place } = useParams();
   const navigate = useNavigate();
 
-  const packagePrices = {
-    solo: 29000,
-    family: 49000,
-    friends: 34000,
+  const packageInfo = {
+
+    solo: "Perfect for solo travelers who love exploring independently.",
+    family: "Ideal for families with comfort, safety and fun.",
+    friends: "Best for friends who want adventure and memories together.",
+   
   };
 
-  const price = packagePrices[type];
-
-  const handleBook = () => {
-    navigate("/booking", {
-      state: {
-        packageType: type,
-        price: price,
-        place: place,
-      },
-    });
+  const packageType = type || "solo";
+  const handleContact = () => {
+    navigate("/contact");
   };
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h2>{place} - {type.toUpperCase()} Package</h2>
-      <h3>Price: ₹{price}</h3>
+    <div style={{ padding: "20px", textAlign: "center" }}>
+     <h2>{type.toUpperCase()} TRIP</h2>
 
-      <button onClick={handleBook}>Book Now</button>
-    </div>
+     
+      <p style={{ fontSize: "18px", margin: "20px 0" }}>
+        {packageInfo[type]}
+      </p>
+
+        <button
+           onClick={ handleContact} 
+        style={{
+          padding: "12px 25px",
+          background: "#2f6bed",
+          color: "#fff",
+          border: "none",
+          borderRadius: "8px",
+          fontSize: "16px",
+          cursor: "pointer",
+          }}
+        >
+          Contact Us
+        </button>
+      </div>
   );
 };
 

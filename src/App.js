@@ -13,6 +13,8 @@ import PlaceGallery from "./PlaceGallery";
 import PlaceSearch from "./pages/PlaceSearch";
 import PlaceDetails from "./pages/PlaceDetails";
 import Packages from "./pages/Packages";
+<Route path="/packages/:type" element={<PlaceDetails />} />
+
 
 
 
