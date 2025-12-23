@@ -1,6 +1,6 @@
 import React from 'react'
 import '../styles/packagecard.css'
-import { useNavigate } from "react-router-dom";
+
 
  const PackageCard = ({ data, onClick }) => {
   
