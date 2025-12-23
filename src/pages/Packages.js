@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 
 const Packages = () => {
-  const { type, place } = useParams();
+  const { type } = useParams();
   const navigate = useNavigate();
 
   const packageInfo = {
@@ -12,7 +12,7 @@ const Packages = () => {
    
   };
 
-  const packageType = type || "solo";
+  
   const handleContact = () => {
     navigate("/contact");
   };
